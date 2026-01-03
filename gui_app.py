@@ -9,7 +9,7 @@ from bin_registry import BinRegistry, BinInfo
 from terrain_map import TerrainMap
 from daily_log import DailyLog
 
-# --- CONFIGURATION ---
+# --- CONFIGURATION (These were missing!) ---
 WINDOW_WIDTH = 1100
 WINDOW_HEIGHT = 700
 BG_COLOR = "#f0f0f0"
@@ -47,13 +47,16 @@ class NamalEcoGuardGUI:
         # Initialize Backend Systems
         self.init_backend()
         
-        # Setup UI
-        self.create_widgets()
-        self.draw_map()
-        
-        # Simulation State
+        # 1. Initialize Simulation State FIRST
+        # This fixes the "AttributeError: 'NamalEcoGuardGUI' object has no attribute 'truck_pos'"
         self.truck_pos = LOCATIONS["Transport Office (Garage)"]
         self.is_running = False
+
+        # 2. Setup UI
+        self.create_widgets()
+        
+        # 3. Draw Map (Now safe because truck_pos exists)
+        self.draw_map()
 
     def init_backend(self):
         """Re-uses your existing Step 1-5 logic to setup the system"""
