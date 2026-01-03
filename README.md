@@ -1,5 +1,5 @@
 # Namal Eco-Guard (NEG) System ♻️🚛
-### A "Digital Twin" Waste Logistics Simulation for Namal University Mianwali
+### A Digital Waste Logistics Simulation for Namal University Mianwali
 
 **Course:** EE-253: Data Structures and Algorithms  
 **Context:** Problem-Based Learning (PBL) Semester Project  
