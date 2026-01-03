@@ -1,15 +1,16 @@
 class LogEntry:
-    def __init__(self, timestamp, location, amount_kg):
+    def __init__(self, timestamp, location, waste_type, amount_kg):
         """
         Args:
-            timestamp (int): Time in 24hr format (e.g., 1430 for 2:30 PM). 
-                             This is the KEY for the BST.
-            location (str): Where the pickup happened.
-            amount_kg (float): Weight of waste collected.
+            timestamp (str): Formatted time "HH:MM". This is the sorting KEY.
+            location (str): e.g., "Circuits Lab"
+            waste_type (str): e.g., "Tech Waste"
+            amount_kg (float): Weight collected
         """
         self.timestamp = timestamp
         self.location = location
+        self.waste_type = waste_type
         self.amount_kg = amount_kg
 
     def __repr__(self):
-        return f"[{self.timestamp}] Collected {self.amount_kg}kg from {self.location}"
+        return f"[{self.timestamp}] {self.location} | {self.waste_type} | {self.amount_kg}kg"
